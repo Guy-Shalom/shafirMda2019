@@ -1,0 +1,261 @@
+﻿<!doctype html>
+<html lang="he">
+<head>
+    <meta charset="utf-8" />
+    <title>Binder Protocols - MDA</title>
+    <meta name="description" content="אתר עם מידע מקצועי לגבי פרוטוקולי טיפול ותרופות עבור פראמדיקים במדא" />
+    <meta name="keywords" content="מדא, מגן דוד אדום, פרוטוקולים, תרופות, מודולת תרופות, ציוד רפואי, מצבי חירום, עדכונים רפואיים, הנחיות ונהלים, דגשי טיפול" />
+    <meta name="author" content="Omri Kahana, Guy Shalom" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <!-- CSS -->
+    <link href="Styles/reset.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+    <!-- Include jQuery Mobile stylesheets -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link href="Styles/themes/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="Styles/themes/mda.css" rel="stylesheet" />
+    <link href="Styles/myStyle.css" rel="stylesheet" type="text/css" />
+    <!-- Scripts -->
+    <!-- Include the jQuery library -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Include the jQuery Mobile library -->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeOUZ5ewac3fQw01WHbQy-u2X0HHn5AgI&language=he"></script>
+    <script src="jScripts/JavaScript.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <div id="container">
+        <!--עמוד הבית של האתר-->
+        <div data-role="page" id="indexId">
+            <!--ההאדר מכיל את תפריט הניווט ושם הדף - חוזר בכל הדפים בתצורה קבועה-->
+            <div data-role="header" id="pageHeader" data-theme="b" data-position="fixed">
+                <h1>דף הבית</h1>
+                <a href="#mypanel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+            </div>
+            <div role="main" class="ui-content" data-theme="b">
+                <!--לוגו בית הספר לפראמדיקים ושורת חיפוש - גנרי בכל הדפים-->
+                <div class="imageWraper">
+                    <a href="#indexId"><img src="Images/Mda.png" alt="logo" class="pageLogo" /></a>
+                </div>
+                <div class="searchWraper">
+                    <label for="search-mini" class="ui-hidden-accessible">Search Input:</label>
+                    <input type="search" class="hebrewWrite" name="search-mini" id="search-mini" data-mini="true" value="" placeholder="הזן את התוכן הרצוי" dir="rtl">
+                </div>
+                <!--כותרות בדף הבית - מועלה דינמית-->
+                <nav class="sectionNav hebrewWrite">
+                    <ul data-role="listview" class="listviewMargin0 homePageJsonContent" id="listviewHomePage"></ul>
+                </nav>
+                <!--קישורים חיצוניים סטטיים-->
+                <aside class="externalLinks">
+                    <h2>קישורים חיצוניים</h2>
+                    <ul class="ui-grid-b">
+                        <li class="ui-block-a linkText"><a href="#"><img src="Images/calculator.jpeg" />מחשבונים</a></li>
+                        <li class="ui-block-b linkText"><a href="#"><img src="Images/headphone.jpeg" />בוחן האזנה</a></li>
+                        <li class="ui-block-c linkText"><a href="#"><img src="Images/notebook.jpeg" />פנקס כיס</a></li>
+                    </ul>
+                </aside>
+            </div>
+            <!--פוטר עם קישור לדף האודות - גנרי בכל העמודים-->
+            <div data-role="footer" class="ui-bar footer_style" data-theme="b" data-position="fixed">
+                <a href="#about" data-role="button" data-icon="info" data-iconpos="notext"></a>
+            </div>
+        </div><!-- page -->
+        <!--דף הפרוטוקולים-->
+        <div data-role="page" id="protocolsId">
+            <div data-role="header" id="pageHeader" data-theme="b" data-position="fixed">
+                <h1>פרוטוקולי טיפול</h1>
+                <a href="#mypanel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+            </div>
+            <div role="main" class="ui-content" data-theme="b">
+                <div class="imageWraper">
+                    <a href="#indexId"><img src="Images/Mda.png" alt="logo" class="pageLogo" /></a>
+                </div>
+                <div class="searchWraper">
+                    <label for="search-mini" class="ui-hidden-accessible">Search Input:</label>
+                    <input type="search" class="hebrewWrite" name="search-mini" id="search-mini" data-mini="true" value="" placeholder="הזן את התוכן הרצוי" dir="rtl">
+                </div>
+                <!--הזנת פרוטוקולים דינמית לקטגוריות קבועות מראש-->
+                <div data-role="collapsible-set" data-theme="c" data-content-theme="c" data-iconpos="right" data-inset="false" class="hebrewWriteImportant accordionDesign">
+                    <nav>
+                        <div data-role="collapsible" data-inset="false" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                            <h3>פרוטוקולי החייאה, ROSC והכזרה על מוות</h3>
+                            <ul data-role="listview" id="protocolUl0"></ul>
+                        </div>
+                        <div data-role="collapsible" data-inset="false" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                            <h3>פרוטוקולים לטיפול במצבי חירום במבוגרים</h3>
+                            <ul data-role="listview" id="protocolUl1"></ul>
+                        </div>
+                        <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                            <h3>מיילדות וגניקולוגיה- פרוטוקולים לטיפול במצבי חירום</h3>
+                            <ul data-role="listview" id="protocolUl2"></ul>
+                        </div>
+                        <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                            <h3>פרוטוקולים לטיפול במצבי חירום תינוקות וילדים</h3>
+                            <ul data-role="listview" id="protocolUl3"></ul>
+                        </div>
+                        <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                            <h3>פרוטוקולים לטיפול בטראומה ומצבי חירום סביבתיים</h3>
+                            <ul data-role="listview" id="protocolUl4"></ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div data-role="footer" class="ui-bar footer_style" data-theme="b" data-position="fixed">
+                <a href="#about" data-role="button" data-icon="info" data-iconpos="notext"></a>
+            </div>
+        </div><!-- page -->
+        <!--עמוד פרוטוקול ספציפי-->
+        <div data-role="page" id="protocolsPageId">
+            <div data-role="header" id="pageHeader" data-theme="b" data-position="fixed">
+                <h1>דום לב במבוגר</h1>
+                <a href="#mypanel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+            </div>
+            <div role="main" class="ui-content" data-theme="b">
+                <div class="imageWraper">
+                    <a href="#indexId"><img src="Images/Mda.png" alt="logo" class="pageLogo" /></a>
+                </div>
+                <div class="searchWraper">
+                    <label for="search-mini" class="ui-hidden-accessible">Search Input:</label>
+                    <input type="search" class="hebrewWrite" name="search-mini" id="search-mini" data-mini="true" value="" placeholder="הזן את התוכן הרצוי" dir="rtl">
+                </div>
+                <div data-role="collapsible-set" data-theme="c" data-content-theme="c" data-iconpos="right" data-inset="false" class="hebrewWriteImportant accordionDesign">
+                    <!--הזנת תוכן דינמית לרשימה עם 3 כותרות - תוכן הכותרות יכול להשתנות-->
+                    <nav>
+                        <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" id="flowChartDiv">
+                            <h3></h3>
+                            <div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;toolbar&quot;:&quot;zoom layers lightbox&quot;,&quot;edit&quot;:&quot;_blank&quot;,&quot;xml&quot;:&quot;&lt;mxfile modified=\&quot;2019-02-27T17:12:50.704Z\&quot; host=\&quot;www.draw.io\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.119 Safari/537.36\&quot; etag=\&quot;7-i4XyClrBhqlh1YkhWj\&quot; version=\&quot;10.2.8\&quot; type=\&quot;google\&quot;&gt;&lt;diagram id=\&quot;P9GYxJdcJvnldMwQeXMb\&quot; name=\&quot;Page-1\&quot;&gt;3VjLdtowEP0aluTYll8sHTDJgjY0bpqwFLaM3RrEESJAv76yHtjCLiENpE03Op6r0diaO1ca6ID+fHtD4DL7hBNUdCwj2XbAoGNZvmexsQR2ArBNTwAzkicCMisgyn8iCRoSXecJWmmOFOOC5ksdjPFigWKqYZAQvNHdUlzob13CGWoAUQyLJvqYJzST23KMCr9F+SxTbzYNOTOHylkCqwwmeFODQNgBfYIxFU/zbR8VZe5UXsS64W9m9x9G0IKesuDuoXDSGyd5DGZfwunnweb+NuvaIsozLNZyw/Jj6U5lACUsIdLEhGZ4hhewCCv0muD1IkHlawxmVT4jjJcMNBn4HVG6k+zCNcUMyui8kLPNrcjdrfCaxOjI96uSgGSG6BE/ua1yL7UXyETdIDxHlOyYA0EFpPmzTj6UNTTb+1VpZg8y06/IutnM+sDr9AAfHT4y0OAPfT6ayuSzAX8OehwRY8hHu8FexU2Z6E2WUxQtIc/phglW5wGSWHLklEymeVH0cYEJDwXSNLXimOErSvAPVJtJ3KnruMeIfEaEou3R1KtZT+pFHhg9aW4q9Zm+xLKa8lzjUmSBD64R60SNmP+WSKx2kdh89KQ2pCrM2sj1ELg1tZRh+uN7TVGBLZ3ZVDfoXh8RjvGycFht00FO2AWU4wXDCC2a+kFm4iCvTT891wPwTPqxDF0/e7suIOtdBeS1M3nNx+HfEBNLL9k9leuvHGVOZDhuDLaatVPWNqdPKgZ7nlQhmFUtKg21pr023nDlnaxn50Q9y8rpGlemrU67nTqNhXmy5GX0Mc7ZvvahbVMvSuAcFJvYjFxVb2JUIOWI03SFaKMm97t5w3ljtJepuICNj1imxuXK9BVFZQBPrynnLDVl9l6oKaGkIzWlAlmOFsi2Xlucaq/gYOHlilUdAq23YxDUGsmeagzr7WRYcxvKKdlOiivTU/5ebSqsReh1QPPkJhmeT9erM92XCUR+2tpvurGPpumZ+s3DMjJb7ku75b70L3ZfOq3cBlatyREs+S0tDQMr8n2N0govG6dvjL/h+GEUhaMwihpcsp+rS360pemY/cjti9/XJQMfqBkClk7uXtpaM+Q0yTUPpXw+dv13YXccBuzzgmgSfb0bhf8nu+4J5IIW5f4Jucys/qoRp3j1fxcIfwE=&lt;/diagram&gt;&lt;/mxfile&gt;&quot;}"></div>
+
+                        </div>
+                        <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-inset="false" id="h3ProtocolPageHeader">
+                            <h3></h3>
+                            <ul data-role="listview" id="protolpageLi0"></ul>
+                        </div>
+                        <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-inset="false" class="collapsiblePadding0" id="h3ProtocolPageHeader2">
+                            <h3></h3>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div data-role="footer" class="ui-bar footer_style" data-theme="b" data-position="fixed">
+                <a href="#about" data-role="button" data-icon="info" data-iconpos="notext"></a>
+            </div>
+        </div><!-- page -->
+        <!--עמוד תרופות-->
+        <div data-role="page" id="medicinesId">
+            <div data-role="header" id="pageHeader" data-theme="b" data-position="fixed">
+                <h1>מודולות תרופות</h1>
+                <a href="#mypanel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+            </div>
+            <div role="main" class="ui-content" data-theme="b">
+                <div class="imageWraper">
+                    <a href="#indexId"><img src="Images/Mda.png" alt="logo" class="pageLogo" /></a>
+                </div>
+                <div class="searchWraper">
+                    <label for="search-mini" class="ui-hidden-accessible">Search Input:</label>
+                    <input type="search" class="hebrewWrite" name="search-mini" id="search-mini" data-mini="true" value="" placeholder="הזן את התוכן הרצוי" dir="rtl">
+                </div>
+
+                <!--התרופות מועלות בצורה דינמית לתוך רשימה ומסווגות לפי א-ב-->
+                <div class="hebrewWriteImportant">
+                    <nav>
+                        <ul data-role="listview" data-autodividers="true" class="listViewDesign iconLeft listviewMargin0" id="medicinesUl"></ul>
+                    </nav>
+                </div>
+            </div>
+            <div data-role="footer" class="ui-bar footer_style" data-theme="b" data-position="fixed">
+                <a href="#about" data-role="button" data-icon="info" data-iconpos="notext"></a>
+            </div>
+        </div><!-- page -->
+        <!--דף תרופה-->
+        <div data-role="page" id="medicinePageId">
+
+            <div data-role="header" id="pageHeader" data-theme="b" data-position="fixed">
+                <h1>אופטלגין – Dipyrone or Metamizole sodium</h1>
+                <a href="#mypanel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+            </div>
+            <div role="main" class="ui-content" data-theme="b">
+                <div class="imageWraper">
+                    <a href="#indexId"><img src="Images/Mda.png" alt="logo" class="pageLogo" /></a>
+                </div>
+                <div class="searchWraper">
+                    <label for="search-mini" class="ui-hidden-accessible">Search Input:</label>
+                    <input type="search" class="hebrewWrite" name="search-mini" id="search-mini" data-mini="true" value="" placeholder="הזן את התוכן הרצוי" dir="rtl">
+                </div>
+                <!--כל המאפיינים של התרופה מועלים כרשימה דינמית-->
+                <div data-role="collapsible-set" data-theme="a" data-content-theme="a" data-iconpos="right" data-inset="false" class="hebrewWriteImportant accordionDesign" id="medicinePageList">
+                </div>
+            </div>
+            <div data-role="footer" class="ui-bar footer_style" data-theme="b" data-position="fixed">
+                <a href="#about" data-role="button" data-icon="info" data-iconpos="notext"></a>
+            </div>
+        </div><!-- page -->
+        <!--דף עדכונים-->
+        <div data-role="page" id="updatesId">
+            <div data-role="header" id="pageHeader" data-theme="b" data-position="fixed">
+                <h1>עדכונים</h1>
+                <a href="#mypanel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+            </div>
+            <div role="main" class="ui-content" data-theme="b">
+                <div class="imageWraper">
+                    <a href="#indexId"><img src="Images/Mda.png" alt="logo" class="pageLogo" /></a>
+                </div>
+                <div class="searchWraper">
+                    <label for="search-mini" class="ui-hidden-accessible">Search Input:</label>
+                    <input type="search" class="hebrewWrite" name="search-mini" id="search-mini" data-mini="true" value="" placeholder="הזן את התוכן הרצוי" dir="rtl">
+                </div>
+                <!--העדכונים מועלים כרשימה דינמית-->
+                <div data-role="collapsible-set" data-theme="c" data-content-theme="c" data-iconpos="right" data-inset="false" class="hebrewWriteImportant accordionDesign" id="updatesPageList">
+                </div>
+            </div>
+            <div data-role="footer" class="ui-bar footer_style" data-theme="b" data-position="fixed">
+                <a href="#about" data-role="button" data-icon="info" data-iconpos="notext"></a>
+            </div>
+        </div><!-- page -->
+        <!--דף מפה-->
+        <div data-role="page" id="myMap" data-url="map-page">
+            <div data-role="header" id="pageHeader" data-theme="b" data-position="fixed">
+                <h1>בואו לבקר אותנו</h1>
+                <a href="#mypanel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+            </div>
+            <!--המפה מוזנת לתוך ה-main-->
+            <div role="main" class="ui-content" data-theme="b" id="myGoogleMap_canvas">
+                <div id="myGoogleMap"></div>
+            </div>
+            <div data-role="footer" class="ui-bar footer_style" data-theme="b" data-position="fixed">
+                <a href="#about" data-role="button" data-icon="info" data-iconpos="notext"></a>
+            </div>
+        </div><!-- page -->
+        <!--דף אודות-->
+        <div data-role="page" id="about">
+            <div data-role="header" id="pageHeader" data-theme="b" data-position="fixed">
+                <h1>אודות</h1>
+                <a href="#mypanel" class="ui-btn-right" data-role="button" data-icon="bars" data-iconpos="notext"></a>
+            </div>
+            <div role="main" class="ui-content" data-theme="b">
+                <div class="imageWraper">
+                    <a href="#indexId"><img src="Images/Mda.png" alt="logo" class="pageLogo" /></a>
+                </div>
+                <section class="centerSection">
+                    <h2>אודות האתר</h2>
+                    <p>אפיון ופיתוח: עמרי כהנא וגיא שלום</p>
+                    <div class="linkText linkedin">
+                        <a href="https://www.linkedin.com/in/guy-shalom-84bb62169/" target="_blank"><img src="Images/linkedin.jpeg" />Guy Shalom</a>
+                        <a href="https://www.linkedin.com/in/omri-kahana-7a4450109/" target="_blank"><img src="Images/linkedin.jpeg" />Omri Kahana</a>
+                    </div>
+                    <p>פותח במסגרת פרויקט בקורס: "תכנות 3- תשע"ט"</p>
+                    <p>הפקולטה לטכנולוגיות למידה, מכון טכנולוגי חולון</p>
+                </section>
+                <div id="hitlogo" class="imageWraper">
+                    <a href="https://www.hit.ac.il/telem/B.A" target="_blank">
+                        <img src="Images/hit.jpg" alt="לוגו של המכון הטכנולוגי חולון" />
+                    </a>
+                </div>
+            </div>
+            <div data-role="footer" class="ui-bar footer_style" data-theme="b" data-position="fixed">
+                <a href="#about" data-role="button" data-icon="info" data-iconpos="notext"></a>
+            </div>
+        </div><!-- page -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,256 @@
+﻿@font-face {
+    font-family: 'Assistant', sans-serif;
+    src: url('../fonts/Assistant-Bold.eot');
+    src: url('../fonts/Assistant-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Assistant-Bold.ttf') format('truetype');
+    src: url('../fonts/Assistant-Regular.eot');
+    src: url('../fonts/Assistant-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/Assistant-Regular.ttf') format('truetype');
+    src: url('../fonts/Assistant-SemiBold.eot');
+    src: url('../fonts/Assistant-SemiBold.eot?#iefix') format('embedded-opentype'), url('../fonts/Assistant-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[data-role=footer] {
+    bottom: 0;
+    right: 0;
+    top: auto !important;
+    position: absolute !important;
+}
+
+[data-role=header] {
+    top: 0;
+    position: absolute !important;
+    bottom: auto !important;
+}
+
+body * {
+    font-family: "Assistant" !important;
+    font-weight: normal;
+    font-size: 1em !important;
+}
+
+body p {
+    margin-bottom: 10px !important;
+}
+
+body h2, body h1 {
+    font-weight: 600 !important;
+    font-size: 1.4em !important;
+}
+
+body h1 {
+    font-weight: 600 !important;
+    font-size: 1.2em !important;
+}
+
+body h3, body h4 {
+    font-weight: 600 !important;
+}
+
+.ui-btn-up-a, .ui-btn-hover-a, .ui-btn-down-a, .ui-bar-a, .ui-body-a, .ui-btn-up-a, .ui-btn-hover-a, .ui-btn-down-a, .ui-body-a input, .ui-body-a select, .ui-body-a textarea, .ui-body-a {
+    font-family: "Assistant";
+    font-size: 1em !important;
+}
+
+body {
+    direction: rtl !important;
+    font-family: 'Assistant', sans-serif;
+}
+
+#container {
+    margin: 0 auto;
+    width: 960px;
+}
+
+#myGoogleMap_canvas {
+    padding: 0;
+    position: absolute !important;
+    top: 5px !important;
+    right: 0;
+    bottom: 5px !important;
+    left: 0 !important;
+}
+
+#myGoogleMap {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+.pageLogo {
+    width: 100%;
+}
+
+.imageWraper a {
+    width: 35%;
+    max-width: 200px !important;
+    height: auto;
+    object-fit: contain;
+}
+
+#hitlogo a {
+    max-width: 100px !important;
+}
+
+.imageWraper img {
+    width: 100%;
+    height: 100%;
+}
+
+.imageWraper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input.hebrewWrite, .hebrewWriteImportant * {
+    text-align: right !important;
+}
+
+.hebrewWrite *, .hebrewWrite {
+    text-align: right;
+}
+
+.linkHomePageLeft {
+    text-align: left;
+}
+
+.linkText a {
+    text-decoration: none;
+    color: #193f59 !important;
+}
+
+.externalLinks .linkText a img {
+    height: auto;
+    width: 100%;
+    max-width: 100px;
+}
+
+.externalLinks .linkText a img {
+    display: block;
+}
+
+.externalLinks h2 {
+    text-align: center;
+}
+
+.externalLinks .linkText a {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: initial;
+}
+
+.linkText a:hover, .linkText a:focus {
+    text-decoration: underline;
+    color: #65c5f0 !important;
+}
+
+.searchWraper {
+    margin-bottom: 40px;
+}
+
+.externalLinks ul {
+    margin: 0;
+    padding: 0;
+}
+
+    .externalLinks ul li {
+        list-style-type: none;
+        text-align: center;
+        padding: 20px;
+    }
+
+.ui-input-search {
+    border-radius: 1em;
+}
+
+.iconLeft a {
+    padding-left: 2.5em !important;
+    padding-right: 1em !important;
+}
+
+    .iconLeft a:after {
+        right: auto;
+        left: 9px;
+    }
+
+.accordionDesign *, .accordionDesign ol li, .accordionDesign ul li, .listViewDesign * {
+    white-space: normal !important;
+}
+
+.listviewMargin0 {
+    margin-top: 0 !important;
+}
+
+.collapsiblePadding0 > div {
+    padding-top: 0 !important;
+}
+
+.ui-listview > .ui-li-static.ui-li-has-thumb {
+    padding-left: 1em;
+    padding-right: 6.25em;
+}
+
+    .ui-listview > .ui-li-static.ui-li-has-thumb img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+.ui-listview .ui-li-has-thumb > img:first-child {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: auto;
+}
+
+.ui-listview > li.ui-first-child img:first-child:not(.ui-li-icon) {
+    border-top-left-radius: 0;
+}
+
+.ui-listview > li.ui-last-child img:first-child:not(.ui-li-icon) {
+    border-bottom-left-radius: 0;
+}
+
+  #myGoogleMap {
+    height: 100%;
+}
+
+.sectionNav {
+    margin-bottom: 40px;
+}
+
+.footer_style {
+    text-align: center;
+}
+
+.centerSection {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+    .centerSection *:not(img) {
+        padding-top: 20px;
+    }
+
+.linkedin img {
+    margin-right: 5px;
+    max-width: 40px;
+    width: 10%;
+}
+
+.centerSection img:last-child {
+    margin-left: 10px;
+}
+
+.linkedin {
+    direction: ltr;
+}
+
+#medicinesUl {
+    margin-bottom: 20px;
+}
